@@ -70,14 +70,20 @@
     padding: 24px;
   }
 
-  &__answer {
-    img {
-      cursor: pointer;
-      width: 25%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
+  &__mark,
+  &__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__mark {
+    cursor: pointer;
+    width: 25%;
+  }
+
+  &__img {
+    max-width: 100%;
   }
 }
