@@ -1,0 +1,58 @@
+.header {
+  position: relative;
+  padding: 32px 0;
+  margin-bottom: 24px;
+  text-align: center;
+
+  &__logo-link {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 4em;
+    height: 4em;
+    margin-right: 1em;
+  }
+
+  &__logo-name {
+    font-family: $font-cursive;
+    font-size: 3.5em;
+    color: #fff;
+  }
+}
+
+.subject {
+  display: flex;
+  justify-content: center;
+
+  &__img-wrapper {
+    padding: 48px 48px 32px;
+    margin: 0 32px;
+    border: 4px solid #fff;
+    border-radius: 24px;
+    box-shadow: 0 8px 24px rgba(#fff, 0.1);
+
+    text-align: center;
+
+    transition: all 0.25s ease-in-out;
+    transition-property: box-shadow, transform;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 48px rgba(#fff, 0.2);
+    }
+  }
+
+  &__name {
+    font-size: 32px;
+    color: #fff;
+  }
+
+  &__img {
+    display: block;
+    width: 256px;
+    margin-bottom: 32px;
+  }
+}
