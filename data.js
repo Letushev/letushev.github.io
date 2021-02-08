@@ -15,6 +15,22 @@ const data = {
       `
     },
     {
+      q: "Що таке синус у прямокутному трикутнику?",
+      a: "Синус - це відношення протилежного катета до гіпотенузи."
+    },
+    {
+      q: "Що таке косинус у прямокутному трикутнику?",
+      a: "Косинус - це відношення прилеглого катета до гіпотенузи."
+    },
+    {
+      q: "Що таке тангенс у прямокутному трикутнику?",
+      a: "Тангенс - це відношення протилежного катета до прилеглого катета."
+    },
+    {
+      q: "Що таке котангенс у прямокутному трикутнику?",
+      a: "Котангенс - це відношення прилеглого катета до протилежного катета."
+    },
+    {
       q: "images/geometry/1-q.jpg",
       a: "images/geometry/1-a.jpg"
     },
@@ -56,6 +72,38 @@ const data = {
     {
       q: "images/geometry/11-q.jpg",
       a: "images/geometry/11-a.jpg"
-    }
+    },
+    {
+      q: "images/geometry/12-q.jpg",
+      a: "images/geometry/12-a.jpg"
+    },
+    {
+      q: "images/geometry/13-q.jpg",
+      a: "images/geometry/13-a.jpg"
+    },
+    {
+      q: "images/geometry/14-q.jpg",
+      a: "images/geometry/14-a.jpg"
+    },
+    {
+      q: "images/geometry/15-q.jpg",
+      a: "images/geometry/15-a.jpg"
+    },
+    {
+      q: "Основна тригонометрична тотожність: ...",
+      a: "images/geometry/16-a.jpg"
+    },
+    {
+      q: "images/geometry/17-q.jpg",
+      a: "images/geometry/17-a.jpg"
+    },
+    {
+      q: "images/geometry/18-q.jpg",
+      a: "images/geometry/18-a.jpg"
+    },
+    {
+      q: "images/geometry/19-q.jpg",
+      a: "images/geometry/19-a.jpg"
+    },
   ],
 };
