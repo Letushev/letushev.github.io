@@ -80,6 +80,14 @@ button {
   outline: none;
 }
 
+strong {
+  color: #9D0208;
+}
+
+i {
+  color: #FAA307;
+}
+
 .header {
   position: relative;
   padding: 32px 0;

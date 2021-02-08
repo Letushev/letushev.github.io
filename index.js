@@ -24,42 +24,27 @@ if (subject === 'algebra' || subject === 'geometry') {
   document.querySelector('.nav__subject').textContent = 
     subject === 'algebra' ? 'Алгебра' : 'Геометрія';
 
-  const formatText = string => {
+  const insert = (parent, string) => {
+    parent.innerHTML = '';
     if (string.includes('images/')) {
       const img = document.createElement('img');
       img.setAttribute('alt', '');
       img.setAttribute('src', string);
       img.className = "qa__img";
-      return img;
+      parent.appendChild(img);
+    } else {
+      parent.innerHTML = string;
     }
-
-    const lines = string.split(/\r?\n/);
-
-    if (lines.length > 1) {
-      const list = document.createElement('ul');
-      for (let line of lines) {
-        const item = document.createElement('li');
-        item.textContent = line;
-        list.appendChild(item);
-      }
-      return list;
-    }
-
-    const p = document.createElement('p');
-    p.textContent = lines[0];
-    return p;
   }
 
   const showAnswer = () => {
-    answerEl.innerHTML = '';
-    answerEl.appendChild(formatText(qa[current].a));
+    insert(answerEl, qa[current].a);
     isAnswerVisible = true;
   }
 
   const updateAnswer = () => {
     scroreEl.textContent = `${current + 1} / ${qa.length}`;
-    questionEl.innerHTML = '';
-    questionEl.appendChild(formatText(qa[current].q))
+    insert(questionEl, qa[current].q);
 
     prevButton.style.visibility = current === 0 ? 'hidden' : 'visible';
     nextButton.style.visibility = current === qa.length - 1 ? 'hidden' : 'visible';
