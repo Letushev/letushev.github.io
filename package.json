@@ -1,23 +1,36 @@
 {
   "name": "math",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Simple app to learn math",
+  "private": true,
+  "author": "Letushev <o.m.letushev@gmail.com>",
+  "license": "ISC",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass --watch --no-source-map scss/main.scss styles.css"
+    "start": "webpack serve --open"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Letushev/math.git"
   },
-  "author": "",
-  "license": "ISC",
+  "homepage": "https://github.com/Letushev/math#readme",
   "bugs": {
     "url": "https://github.com/Letushev/math/issues"
   },
-  "homepage": "https://github.com/Letushev/math#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^7.0.0",
+    "css-loader": "^5.0.2",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.2.0",
+    "mini-css-extract-plugin": "^1.3.8",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^11.0.1",
+    "webpack": "^5.23.0",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  },
   "dependencies": {
-    "sass": "^1.32.6"
+    "reset-css": "^5.0.1"
   }
 }

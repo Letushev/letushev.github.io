@@ -1,3 +1,5 @@
+import data from './data.json';
+
 const shuffleArray = array => {
   for (let i = array.length - 1; i > 0; i--) {
     const random = Math.floor(Math.random() * (i + 1));
@@ -9,6 +11,44 @@ const shuffleArray = array => {
 
 const urlParams = new URLSearchParams(window.location.search);
 const subject = urlParams.get('s');
+const subjectData = data[subject];
+
+const images = [];
+subjectData.forEach(block => {
+  for (let part in block) {
+    if (block[part].includes('images')) {
+      images.push(block[part]);
+    }
+  }
+});
+
+let progress = 0;
+
+const progressOverlay = document.createElement('div');
+progressOverlay.classList.add('overlay');
+const progressHeader = document.createElement('h1');
+progressHeader.textContent = `Завантаження зображень... (0/${images.length})`;
+progressOverlay.appendChild(progressHeader);
+const progressContainer = document.createElement('div');
+progressContainer.classList.add('progress');
+const indicator = document.createElement('div');
+indicator.classList.add('indicator');
+progressContainer.appendChild(indicator);
+progressOverlay.appendChild(progressContainer);
+document.body.appendChild(progressOverlay);
+
+Promise.all(images.map(url => {
+  return new Promise(loaded => {
+    const img = new Image();
+    img.addEventListener('load', () => {
+      progress++;
+      progressHeader.textContent = `Завантаження зображень... (${progress}/${images.length})`;
+      indicator.style.width = `${progress/images.length * 100}%`;
+      loaded();
+    });
+    img.src = url;
+  });
+})).then(() => progressOverlay.style.display = 'none');
 
 if (subject === 'algebra' || subject === 'geometry') {
   const questionEl = document.querySelector('.qa__question').children[0];
@@ -17,7 +57,7 @@ if (subject === 'algebra' || subject === 'geometry') {
   const nextButton = document.querySelector('.nav__button--next');
   const prevButton = document.querySelector('.nav__button--prev');
 
-  const qa = shuffleArray([...data[subject]]);
+  const qa = shuffleArray([...subjectData]);
   let current = 0;
   let isAnswerVisible = false;
 

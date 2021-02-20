@@ -89,3 +89,33 @@
     object-fit: contain;
   }
 }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(#000, 0.8);
+
+  h1 {
+    color: #fff;
+    font-size: 2rem;
+    margin-top: 200px;
+    text-align: center;
+  }
+
+  .progress {
+    width: 500px;
+    height: 16px;
+    margin: 48px auto 0;
+
+    .indicator {
+      height: 100%;
+      width: 0;
+      background: #fff;
+    }
+  }
+}
